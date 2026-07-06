@@ -31,3 +31,5 @@ A real-time collaboration platform with workspaces, channels, direct messaging, 
 - Typing indicators
 - Read receipts
 - <img width="1918" height="940" alt="image" src="https://github.com/user-attachments/assets/57d11fc0-4c4b-48c8-b130-e93352aa6f78" />
+<img width="1918" height="941" alt="image" src="https://github.com/user-attachments/assets/1f939567-6088-4bbb-9a46-2104c0ead650" />
+
