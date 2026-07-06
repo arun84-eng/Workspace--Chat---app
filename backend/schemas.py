@@ -1,0 +1,73 @@
+from pydantic import BaseModel, EmailStr
+
+
+class UserCreate(BaseModel):
+    username: str
+    email: EmailStr
+    password: str
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str   
+class WorkspaceCreate(BaseModel):
+    name: str     
+class ChannelCreate(BaseModel):
+    name: str
+    workspace_id: int    
+class MessageCreate(BaseModel):
+    channel_id: int
+    content: str
+    parent_message_id: int | None = None  
+class WorkspaceMemberCreate(BaseModel):
+    user_id: int
+    workspace_id: int    
+class AddWorkspaceMember(BaseModel):
+    workspace_id: int
+    user_id: int    
+   
+class MessageUpdate(BaseModel):
+    content: str    
+class DirectMessageCreate(BaseModel):
+    receiver_id: int
+    content: str    
+class PromoteMember(BaseModel):
+    workspace_id: int
+    user_id: int    
+class DemoteMember(BaseModel):
+    workspace_id: int
+    user_id: int    
+class RemoveMember(BaseModel):
+    workspace_id: int
+    user_id: int    
+class LeaveWorkspace(BaseModel):
+    workspace_id: int    
+class DeleteWorkspace(BaseModel):
+    workspace_id: int    
+class DeleteChannel(BaseModel):
+    channel_id: int    
+class RenameChannel(BaseModel):
+    channel_id: int
+    name: str    
+class RenameWorkspace(BaseModel):
+    workspace_id: int
+    name: str    
+class UpdateProfile(BaseModel):
+    username: str
+    email: str    
+class ChangePassword(BaseModel):
+    current_password: str
+    new_password: str    
+class ReactionCreate(BaseModel):
+    message_id: int
+    emoji: str    
+class TypingUpdate(BaseModel):
+    channel_id: int
+    is_typing: bool    
+class NotificationCreate(BaseModel):
+    user_id: int
+    message: str    
+class ChannelMemberCreate(BaseModel):
+    channel_id: int
+    user_id: int    
+class ThreadReplyCreate(BaseModel):
+    parent_id: int
+    content: str    
